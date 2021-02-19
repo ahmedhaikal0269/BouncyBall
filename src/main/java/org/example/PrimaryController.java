@@ -25,13 +25,7 @@ public class PrimaryController {
 
     @FXML
     private void startButtonHandler() throws IOException {
-        App.setRoot("secondary");
-        System.out.println("Number of Balls: " + numBalls.getValue().toString());
-        if(randomColor.isSelected())
-            System.out.println("Random Color radio button is selected.");
-        else
-            System.out.println("Select Color radio button is selected.");
-        System.out.println("Selected Color is: " + ballColor.getValue());
+        App.setRoot(numBalls.getValue(), selectColor.isSelected() ? ballColor.getValue() : null);
     }
 
     public void initialize(){
